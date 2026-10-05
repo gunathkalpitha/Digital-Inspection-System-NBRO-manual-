@@ -352,7 +352,6 @@ $$;</pre>
 </section>
 
 <section id="feedback"><h2>18. Client feedback</h2>
-<blockquote>“I have reviewed the NBRO site inspection web and mobile application submitted for this project, and I am very satisfied with the work. The system covers site registration, building details and defect recording with photographs as agreed, and the mobile application provides the field features our officers need. I appreciate the excellent work completed on this system. Cooperation throughout the project was very good, and matters raised during the review were addressed clearly. I confirm that the delivered work meets the agreed scope.”<cite>Client feedback statement</cite></blockquote>
 <h3>Share your feedback</h3>
 <form class="fb" id="fb"><label>Your name<input name="name" required autocomplete="name"></label>
 <label>Organisation / role<input name="org" autocomplete="organization-title"></label>
@@ -390,15 +389,18 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)ls.forE
 secs.forEach(s=>io.observe(s));
 const FEEDBACK_ENDPOINT="https://formspree.io/f/mjygvbvv";   // e.g. "https://formspree.io/f/xxxxxxx"  (see setup steps)
 const FEEDBACK_EMAIL="gbgunathkalpitha18@gmail.com";      // fallback: opens the visitor's email app
-const VIDEOS=[ // src: "videos/login.mp4" once you add the file
-{t:"Log in and accept an invitation",d:"Account set-up for new users",src:""},
-{t:"Conduct a site survey",d:"The five-step wizard and defect capture",src:""},
-{t:"Export a PDF report",d:"Generate, open and share",src:""},
+const VIDEOS=[ // Local MP4 files in the videos folder
+{t:"Log in and accept an invitation",d:"Account set-up for new users",src:"videos/NBRO%20mobile%20app_instruction_part_1.mp4"},
+{t:"Conduct a site survey",d:"The five-step wizard and defect capture",src:"videos/NBRO%20mobile%20app_instruction_part_2.mp4"},
+{t:"Export a PDF report",d:"Generate, open and share",src:"videos/NBRO%20mobile%20app_instruction_part_3.mp4"},
 {t:"Admin: invite users and send notices",d:"Web application walkthrough",src:""}];
-const IMAGES=[ // src: "images/dashboard.png"
-{t:"Web dashboard",d:"Administrator overview",src:""},{t:"Officer management",d:"Active and disabled users",src:""},
-{t:"Mobile dashboard",d:"Field Surveyor home",src:""},{t:"Defect capture",d:"Step 4 of the wizard",src:""},
-{t:"Map view",d:"Site pins",src:""},{t:"PDF report",d:"Cover page",src:""}];
+const IMAGES=[ // Screenshots from the images folder
+{t:"Add officer-admin",d:"Add officer or administrator screen",src:"images/Add%20officer-admin.jpeg"},
+{t:"Capture_defects",d:"Defect capture screen",src:"images/Capture_defects.jpeg"},
+{t:"Google map site view",d:"Google Maps site view",src:"images/Google%20map%20site%20view.jpeg"},
+{t:"officer mobile dashboard",d:"Field officer mobile dashboard",src:"images/officer%20mobile%20dashboard.jpeg"},
+{t:"pdf view",d:"PDF report view",src:"images/pdf%20view.jpeg"},
+{t:"web dashboard",d:"Web application dashboard",src:"images/web%20dashboard.png"}];
 const mk=(el,a,v)=>{el.innerHTML=a.map(x=>`<figure>${x.src?(v?`<video controls preload="metadata" src="${x.src}"></video>`:`<img loading="lazy" src="${x.src}" alt="${x.t}">`):`<div class="ph">${v?"Video":"Image"} coming soon</div>`}<figcaption><b>${x.t}</b>${x.d}</figcaption></figure>`).join("")};
 mk($("#vg"),VIDEOS,1);mk($("#ig"),IMAGES,0);
 let rate=0;const st=$("#st"),submit=$("#fb .btn");
